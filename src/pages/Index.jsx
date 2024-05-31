@@ -47,8 +47,10 @@ const Index = () => {
             placeholder="Add a new task"
             value={task}
             onChange={(e) => setTask(e.target.value)}
+            bg="gray.600"
+            color="whiteAlpha.900"
           />
-          <Button onClick={addTask} colorScheme="teal">
+          <Button onClick={addTask} bg="teal.500" color="whiteAlpha.900">
             Add Task
           </Button>
         </HStack>
@@ -61,11 +63,12 @@ const Index = () => {
               borderWidth="1px"
               borderRadius="md"
               justifyContent="space-between"
-              bg={task.completed ? "green.100" : "white"}
+              bg={task.completed ? "green.700" : "gray.700"}
             >
               <Checkbox
                 isChecked={task.completed}
                 onChange={() => toggleTaskCompletion(index)}
+                colorScheme="teal"
               >
                 <Text as={task.completed ? "s" : ""}>{task.text}</Text>
               </Checkbox>
